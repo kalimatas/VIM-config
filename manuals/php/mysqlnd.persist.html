@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Persistent Connections</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.config.html">Runtime Configuration</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.stats.html">Statistics</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysqlnd.persist" class="chapter">
+
+  <h1>Persistent Connections</h1>
+
+
+  <p class="para">
+    <em class="emphasis">Using Persistent Connections</em>
+  </p>
+
+  <p class="para">
+    The MySQL database extensions do not support persistent connections
+    when used with the MySQL Client Library. However, they do when using
+    MySQL Native Driver. When creating a connection the hostname is
+    prepended with "<span class="quote">p:</span>". This is demonstrated by the
+    following code snippet, which creates a new connection using
+    <i>mysqli</i>:
+  </p>
+
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$host&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"p:localhost"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$port&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3306</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/tmp/mysql.sock"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$user&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"root"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$dbname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"test"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">mysqli</span><span style="color: #007700">(</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$dbname</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$socket</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;server'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysqli_connect_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+  </div>
+
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.config.html">Runtime Configuration</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.stats.html">Statistics</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

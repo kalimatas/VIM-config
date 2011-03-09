@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The MongoCursorException class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.mongoexception.html">MongoException</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mongocursortimeoutexception.html">MongoCursorTimeoutException</a></div>
+ <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.mongocursorexception" class="reference">
+
+ <h1 class="title">The MongoCursorException class</h1>
+ 
+
+ <div class="partintro">
+
+  
+  <div class="section" id="mongocursorexception.intro" name="mongocursorexception.intro">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    Caused by accessing a cursor incorrectly or a error receiving a reply.
+   </p>
+
+   <p class="para">
+    If there is an error receiving a reply, there will be a more 
+    specific error message to help diagnose the problem.  As it is a bit 
+    programmatically awkward to parse an exception message, there is also an
+    error code associated with each cause of the exception.
+   </p>
+
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">
+      <i>threw away response, please try again</i>
+     </p>
+     <p class="para">
+      Code: 1
+     </p>
+     <p class="para">
+      Unlikely to occur in a single-threaded application.  The database sent the
+      resoponse while another thread was waiting for a response, so the other
+      thread threw it out.  You should attempt the query again, possibly with 
+      less threads.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <em class="emphasis">various</em>
+     </p>
+     <p class="para">
+      Code: 1
+     </p>
+     <p class="para">
+      A database reply could not be recieved because a connection 
+      with the database could not be established.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>various</i>
+     </p>
+     <p class="para">
+      Code: 2
+     </p>
+     <p class="para">
+      Caused by the request timing out.  This will return the error message 
+      from the C socket library.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>no db response</i>
+     </p>
+     <p class="para">
+      Code: 4
+     </p>
+     <p class="para">
+      This may not even be an error, for example, the database command 
+      &quot;shutdown&quot; returns no response.  However, if you were expecting a 
+      response, this means the database didn&#039;t give one.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>bad response length: %d, max: %d, did the db assert?</i>
+     </p>
+     <p class="para">
+      This means that the database said that its response was greater than 4Mb 
+      or less than 0.  Generally, a number greater than 5Mb should be reported 
+      to the developers as a potential database bug (max response length is 
+      4Mb).  A response of less than 0 often means a database assertion occured.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>incomplete response</i>
+     </p>
+     <p class="para">
+      Highly unusual.  Occurs if the database response started out correctly, 
+      but broke off in the middle.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>error getting database response: errstr</i>
+     </p>
+     <p class="para">
+      <i>WSA error getting database response: errstr</i>
+     </p>
+     <p class="para">
+      &quot;errstr&quot; is an io error reported directly from the C socket 
+      subsystem.  On Windows, the error message is prefixed with &quot;WSA&quot;.
+     </p>
+    </li>
+   </ul>
+  </div>
+  
+
+  <div class="section" id="mongocursorexception.synopsis" name="mongocursorexception.synopsis">
+   <h2 class="title">Class synopsis</h2>
+
+   
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">MongoCursorException</b></div>
+
+    
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <a href="class.mongoexception.html" class="classname">MongoException</a>
+     </span>
+     {</div>
+    
+    
+   }</div>
+   
+
+  </div>
+
+ </div>
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.mongoexception.html">MongoException</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mongocursortimeoutexception.html">MongoCursorTimeoutException</a></div>
+ <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

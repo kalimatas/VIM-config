@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Notes</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.stats.html">Statistics</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.mysqlnd-qc.html">mysqlnd_qc</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysqlnd.notes" class="chapter">
+ <h1>Notes</h1>
+
+ <p class="para">
+  This section provides a collection of miscellaneous notes on MySQL
+  Native Driver usage.
+ </p>
+ <ul class="itemizedlist">
+  <li class="listitem">
+   <p class="para">
+    In the case where you pass a statement to
+    <span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span> that is longer than
+    <i>max_allowed_packet</i> of the server, the returned
+    error codes are different depending on whether you are using MySQL
+    Native Driver (<i>mysqlnd</i>) or MySQL Client Library
+    (<i>libmysql</i>). The behavior is as follows:
+   </p>
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">
+      <i>mysqlnd</i> on Linux returns an error code of 1153.
+      The error message means "<span class="quote">got a packet bigger than
+      <i>max_allowed_packet</i> bytes</span>".
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>mysqlnd</i> on Windows returns an error code 2006.
+      This error message means "<span class="quote">server has gone away</span>".
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>libmysql</i> on all platforms returns an error code
+      2006. This error message means "<span class="quote">server has gone
+      away</span>".
+     </p>
+    </li>
+   </ul>
+   <p class="para">
+    The same thing happens with
+    <span class="function"><a href="mysqli-stmt.prepare.html" class="function">mysqli_stmt_prepare()</a></span>.
+   </p>
+  </li>
+ </ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.stats.html">Statistics</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.mysqlnd-qc.html">mysqlnd_qc</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

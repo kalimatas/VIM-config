@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Runtime Configuration</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.install.html">Installation</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.persist.html">Persistent Connections</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysqlnd.config" class="chapter">
+ <div class="section">
+
+  <h2 class="title">Runtime Configuration</h2>
+  <p class="simpara">
+The behaviour of these functions is affected by settings in <var class="filename">php.ini</var>.
+</p>
+
+  <p class="para">
+   <table class="doctable table">
+    <caption><b>MySQL Native Driver Configuration Options</b></caption>
+    
+     <thead valign="middle">
+      <tr valign="middle">
+       <th>Name</th>
+       <th>Default</th>
+       <th>Changeable</th>
+       <th>Changelog</th>
+      </tr>
+
+     </thead>
+
+     <tbody valign="middle" class="tbody">
+      <tr valign="middle">
+       <td align="left"><a href="mysqlnd.config.html#mysqlnd.collect_statistics" class="link">mysqlnd.collect_statistics</a></td>
+       <td align="left">&quot;1&quot;</td>
+       <td align="left">PHP_INI_SYSTEM</td>
+       <td align="left">Available since PHP 5.3.0.</td>
+      </tr>
+
+      <tr valign="middle">
+       <td align="left"><a href="mysqlnd.config.html#mysqlnd.collect_memory_statistics" class="link">mysqlnd.collect_memory_statistics</a></td>
+       <td align="left">&quot;0&quot;</td>
+       <td align="left">PHP_INI_SYSTEM</td>
+       <td align="left">Available since PHP 5.3.0.</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   For further details and definitions of the
+PHP_INI_* modes, see the <a href="configuration.changes.modes.html" class="xref">Where a configuration setting may be set</a>.
+  </p>
+
+  <p class="para">Here&#039;s a short explanation of
+the configuration directives.</p>
+
+  <p class="para">
+   <dl>
+
+    <dt id="mysqlnd.collect_statistics">
+     <span class="term">
+      <i><tt class="parameter">mysqlnd.collect_statistics</tt></i>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> 
+     </span>
+     <dd>
+
+      <p class="para">
+       Enables the collection of various client statistics which can be
+       accessed through <span class="function"><a href="mysqli.get-client-stats.html" class="function">mysqli_get_client_stats()</a></span>,
+       <span class="function"><a href="mysqli.get-connection-stats.html" class="function">mysqli_get_connection_stats()</a></span>,
+       <span class="function"><a href="mysqli.get-cache-stats.html" class="function">mysqli_get_cache_stats()</a></span> and are shown in
+       <i>mysqlnd</i> section of the output of the
+       <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> function as well.
+      </p>
+
+      <p class="para">
+       This configuration setting enables all
+       <a href="mysqlnd.stats.html" class="link">MySQL Native Driver statistics</a>
+       except those relating to memory management.
+      </p>
+     </dd>
+
+    </dt>
+
+
+    <dt id="mysqlnd.collect_memory_statistics">
+     <span class="term">
+      <i><tt class="parameter">mysqlnd.collect_memory_statistics</tt></i>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> 
+     </span>
+     <dd>
+
+      <p class="para">
+       Enable the collection of various memory statistics which can be
+       accessed through <span class="function"><a href="mysqli.get-client-stats.html" class="function">mysqli_get_client_stats()</a></span>,
+       <span class="function"><a href="mysqli.get-connection-stats.html" class="function">mysqli_get_connection_stats()</a></span>,
+       <span class="function"><a href="mysqli.get-cache-stats.html" class="function">mysqli_get_cache_stats()</a></span> and are shown in
+       <i>mysqlnd</i> section of the output of the
+       <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> function as well.
+      </p>
+
+      <p class="para">
+       This configuration setting enables the memory management statistics
+       within the overall set of <a href="mysqlnd.stats.html" class="link">MySQL Native
+       Driver statistics</a>.
+      </p>
+     </dd>
+
+    </dt>
+
+   </dl>
+
+  </p>
+
+ </div>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.install.html">Installation</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.persist.html">Persistent Connections</a></div>
+ <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The MongoException class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mongocursorexception.html">MongoCursorException</a></div>
+ <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.mongoexception" class="reference">
+
+ <h1 class="title">The MongoException class</h1>
+ 
+
+ <div class="partintro">
+
+  
+  <div class="section" id="mongoexception.intro" name="mongoexception.intro">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    Default Mongo exception.
+   </p>
+
+   <p class="para">
+    This covers a bunch of different error conditions that may eventually be
+    moved to more specific exceptions, but will always extend 
+    <b class="classname">MongoException</b>.
+   </p>
+
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">
+      <i>non-utf8 string</i>
+     </p>
+     <p class="para">
+      This error occurs if you attempt to send a non-utf8 string to the 
+      database.  All strings going into the database should be UTF8. See php.ini
+      options for the transition option of quieting this exception.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>invalid regex</i>
+     </p>
+     <p class="para">
+      The regex you passed in does not match the form /regex/flags.
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
+      <i>The MongoSomething object has not been correctly initialized by its constructor</i>
+     </p>
+     <p class="para">
+      Probably your Mongo object is not connected to a database server.
+     </p>
+    </li>
+   </ul>
+  </div>
+  
+
+  <div class="section" id="mongoexception.synopsis" name="mongoexception.synopsis">
+   <h2 class="title">Class synopsis</h2>
+
+   
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">MongoException</b></div>
+
+    
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <a href="class.exception.html" class="classname">Exception</a>
+     </span>
+     {</div>
+    
+    
+   }</div>
+   
+
+  </div>
+
+ </div>
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mongocursorexception.html">MongoCursorException</a></div>
+ <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>
